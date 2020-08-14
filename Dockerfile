@@ -1,0 +1,17 @@
+# official Python runtime as a parent image
+FROM python:3.7
+
+# enviroment variables
+ENV PYTHONUNBUFFERED 1
+
+# create root directory
+RUN mkdir /app
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the current directory contents into the container at /music_api
+ADD . /app/
+
+# Install packages specified in requirements.txt
+RUN pip install -r requirements.txt

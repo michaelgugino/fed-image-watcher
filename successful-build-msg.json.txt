@@ -1,0 +1,2 @@
+https://apps.fedoraproject.org/datagrepper/id?id=2020-1aec6a8e-bbd6-4c93-9228-947a09acfacc&is_raw=true&size=extra-large
+https://kojipkgs.fedoraproject.org/compose/
