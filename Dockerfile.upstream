@@ -1,12 +1,18 @@
-# https://github.com/sclorg/s2i-python-container/blob/master/3.8/Dockerfile.fedora
+# official Python runtime as a parent image
+FROM python:3.7
 
-FROM registry.fedoraproject.org/f32/python3:latest
+# enviroment variables
+ENV PYTHONUNBUFFERED 1
+
+# create root directory
+RUN mkdir /app
 
 # Set the working directory
-WORKDIR /opt/app-root/
+WORKDIR /app
 
 # Copy the current directory contents into the container at /music_api
-ADD . /opt/app-root/
+ADD . /app/
 
 # Install packages specified in requirements.txt
 RUN pip install -r requirements.txt
+

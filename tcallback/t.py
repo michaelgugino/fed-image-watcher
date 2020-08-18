@@ -1,8 +1,3 @@
-import os
-
-from fedora_messaging import config
-
-
 class SaveMessage(object):
     """
     A fedora-messaging consumer that saves the message to a file.

@@ -1,0 +1,23 @@
+FROM docker.io/fedora:32
+
+RUN INSTALL_PKGS="fedora-messaging" && \
+    dnf -y --setopt=tsflags=nodocs install $INSTALL_PKGS && \
+    rpm -V $INSTALL_PKGS && \
+    dnf -y clean all --enablerepo='*'
+
+ADD ./hack/fix-permissions.sh /usr/local/bin/fix-permissions
+
+RUN mkdir /opt/app-root/assets -p && \
+    chown -R 1001:0 /opt/app-root/ && \
+    chmod +x /usr/local/bin/fix-permissions && \
+    fix-permissions /opt/app-root/ -P
+
+# Set the working directory
+WORKDIR /opt/app-root/
+
+# Copy the current directory contents into the container at /music_api
+ADD ./assets/ /opt/app-root/assets/
+ADD ./config.tom /opt/app-root/
+ADD ./tcallback /opt/app-root/
+
+USER 1001
