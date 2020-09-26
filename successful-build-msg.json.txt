@@ -1,2 +1,3 @@
-https://apps.fedoraproject.org/datagrepper/id?id=2020-1aec6a8e-bbd6-4c93-9228-947a09acfacc&is_raw=true&size=extra-large
+IoT: https://apps.fedoraproject.org/datagrepper/id?id=2020-1aec6a8e-bbd6-4c93-9228-947a09acfacc&is_raw=true&size=extra-large
+Cloud: https://apps.fedoraproject.org/datagrepper/id?id=2020-b4967630-2649-45a4-bedc-257ae4553294&is_raw=true&size=extra-large
 https://kojipkgs.fedoraproject.org/compose/
